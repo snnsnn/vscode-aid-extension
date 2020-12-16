@@ -1,0 +1,158 @@
+{
+  "name": "aid",
+  "displayName": "Aid",
+  "version": "1.0.0",
+  "description": "",
+  "publisher": "snn",
+  "private": true,
+  "main": "./output/main.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode=development",
+    "watch": "webpack --mode=development --watch",
+    "build": "cross-env NODE_ENV=development webpack --mode=production",
+    "compile-check": "tsc -p .",
+    "lint": "eslint . --ext .ts,.tsx",
+    "bundle": "vsce package",
+    "install-ext": "code --install-extension aid-1.0.0.vsix",
+    "uninstall-ext": "code code --uninstall-extension aid-1.0.0.vsix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript"
+  ],
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "aid.wrapInObject": {
+          "title": "Wrap Parameteres in Object",
+          "description": "Wraps console.log parameters in object",
+          "type": "boolean",
+          "default": true
+        },
+        "aid.saveFile.onAdd": {
+          "title": "Save After Add",
+          "description": "Saves file after adding log statement",
+          "type": "boolean",
+          "default": false
+        },
+        "aid.saveFile.onRemove": {
+          "title": "Save After Remove",
+          "description": "Saves file after removing log statement",
+          "type": "boolean",
+          "default": false
+        },
+        "aid.saveFile.onToggle": {
+          "title": "Save After Toggle",
+          "description": "Saves file after toggling console.log statement",
+          "type": "boolean",
+          "default": false
+        },
+        "aid.removeOnClose": {
+          "title": "Remove on Files Close",
+          "description": "Removes log statements on closing file",
+          "type": "boolean",
+          "default": false
+        },
+        "aid.showPromtIfEmpty": {
+          "title": "Ask For Input",
+          "description": "Activetes showing input prompt",
+          "type": "boolean",
+          "default": false
+        },
+        "aid.useCodelens": {
+          "title": "Use Codelens",
+          "description": "Sets settings for using codelens buttons for adding and removing",
+          "default": "always",
+          "type": "string",
+          "enum": [
+            "never",
+            "on selection",
+            "always"
+          ]
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "aid.add",
+        "title": "Add console log"
+      },
+      {
+        "command": "aid.remove",
+        "title": "Remove console log"
+      },
+      {
+        "command": "aid.removeOthers",
+        "title": "Remove other console logs"
+      },
+      {
+        "command": "aid.removeAll",
+        "title": "Remove all console logs"
+      },
+      {
+        "command": "aid.toggle",
+        "title": "Toggle console log"
+      },
+      {
+        "command": "aid.toggleOthers",
+        "title": "Toggle other console logs"
+      },
+      {
+        "command": "aid.toggleAll",
+        "title": "Toggle all console.logs"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "aid.add",
+        "key": "ctrl+i",
+        "mac": "cmd+i"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "aid.add",
+          "group": "aid@10"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-export-default-from": "^7.12.1",
+    "@babel/plugin-proposal-export-namespace-from": "~7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-proposal-throw-expressions": "~7.12.1",
+    "@babel/plugin-syntax-dynamic-import": "~7.8.3",
+    "@babel/plugin-transform-runtime": "~7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.19",
+    "@types/vscode": "^1.52.0",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.15.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.6",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "vsce": "^1.81.1",
+    "webpack": "^5.10.1",
+    "webpack-cli": "^4.2.0"
+  }
+}

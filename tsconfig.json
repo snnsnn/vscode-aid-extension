@@ -1,0 +1,38 @@
+{
+  "files": [
+    "src/extension.ts"
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": false,
+    "declaration": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "output",
+    "rootDir": "src",
+    "module": "es6",
+    "target": "es2019",
+    "lib": [
+      "ES2019"
+    ],
+  },
+  "include": [
+    "node_modules/vscode/vscode.d.ts",
+    "node_modules/vscode/lib/*",
+    "./src/*.ts"
+  ],
+  "exclude": [
+    "output"
+  ]
+}

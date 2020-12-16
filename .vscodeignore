@@ -1,0 +1,14 @@
+src/
+node_modules/
+.backup/
+.vscode/
+.babelrc
+.eslintrc.js
+.gitignore
+.prettierrc.js
+.package-lock.json
+tsconfig.json
+tsconfig.tsbuildinfo
+*.config.js
+**/*.ts
+*.vsix
